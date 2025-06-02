@@ -1,0 +1,51 @@
+{
+  "name": "betting-matching-engine",
+  "version": "1.0.0",
+  "description": "Decentralized betting matching engine with comprehensive testnet testing",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "deploy:sepolia": "hardhat run scripts/testnet-deploy.js --network sepolia",
+    "deploy:mumbai": "hardhat run scripts/testnet-deploy.js --network mumbai",
+    "deploy:arbitrum": "hardhat run scripts/testnet-deploy.js --network arbitrumSepolia",
+    "deploy:base": "hardhat run scripts/testnet-deploy.js --network baseSepolia",
+    "test:sepolia": "hardhat run scripts/testnet-interact.js --network sepolia",
+    "test:mumbai": "hardhat run scripts/testnet-interact.js --network mumbai",
+    "test:arbitrum": "hardhat run scripts/testnet-interact.js --network arbitrumSepolia",
+    "test:base": "hardhat run scripts/testnet-interact.js --network baseSepolia",
+    "verify:sepolia": "hardhat verify --network sepolia",
+    "verify:mumbai": "hardhat verify --network mumbai",
+    "node": "hardhat node",
+    "clean": "hardhat clean",
+    "setup": "mkdir -p deployments && mkdir -p contracts/mocks && mkdir -p scripts && mkdir -p test",
+    "quick-setup": "hardhat run scripts/quick-setup.js --network localhost",
+    "faucet": "echo 'Get testnet ETH from faucets:' && echo 'Sepolia: https://sepoliafaucet.com/' && echo 'Mumbai: https://faucet.polygon.technology/' && echo 'Base: https://www.coinbase.com/faucets/base-ethereum-sepolia-faucet'"
+  },
+  "keywords": [
+    "ethereum",
+    "betting",
+    "defi",
+    "testnet",
+    "smart-contracts"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "chai": "^4.2.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "solidity-coverage": "^0.8.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^16.3.1"
+  }
+}
